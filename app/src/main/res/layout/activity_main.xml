@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/instructions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check all of the ingredients you have:"
+        android:textSize="14pt"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textAlignment="center"
+        android:layout_marginLeft="20px"
+        android:layout_marginRight="20px"
+        app:layout_constraintVertical_bias="0.228" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="400dp"
+        app:layout_constraintTop_toBottomOf="@+id/instructions"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="40px"
+        tools:layout_editor_absoluteX="8dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <CheckBox
+                android:id="@+id/checkBoxBread"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bread"
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="16dp"
+                android:onClick="onCheckboxClicked"
+                />
+
+            <CheckBox
+                android:id="@+id/checkBoxEgg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Eggs"
+                android:onClick="onCheckboxClicked"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxMilk"
+                tools:layout_editor_absoluteX="16dp" />
+
+
+            <CheckBox
+                android:id="@+id/checkBoxMilk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Milk"
+                android:textSize="18sp"
+                android:onClick="onCheckboxClicked"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxBread"
+                tools:layout_editor_absoluteX="15dp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxCheese"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cheese"
+                android:textSize="18sp"
+                android:onClick="onCheckboxClicked"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxEgg"
+                tools:layout_editor_absoluteX="8dp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxTomato"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tomatoes"
+                android:textSize="18sp"
+                android:onClick="onCheckboxClicked"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxPork"
+                tools:layout_editor_absoluteX="8dp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxOnions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Onions"
+                android:textSize="18sp"
+                android:onClick="onCheckboxClicked"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxTomato"
+                tools:layout_editor_absoluteX="39dp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxChicken"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chicken"
+                android:onClick="onCheckboxClicked"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxBeef"
+                tools:layout_editor_absoluteX="8dp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxBeef"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Beef"
+                android:textSize="18sp"
+                android:onClick="onCheckboxClicked"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxButter"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxPork"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pork"
+                android:textSize="18sp"
+                android:onClick="onCheckboxClicked"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxChicken"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxButter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onCheckboxClicked"
+                android:text="Butter"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxFlour"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxFlour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Flour"
+                android:textSize="18sp"
+                android:onClick="onCheckboxClicked"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxCheese"
+                tools:layout_editor_absoluteX="8dp" />
+            <EditText
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="cheese"
+                android:id="@+id/otherIngredients"
+                />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
