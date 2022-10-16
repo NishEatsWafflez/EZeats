@@ -2,9 +2,13 @@ package com.example.recipefinder;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,6 +22,18 @@ public class MainActivity extends AppCompatActivity {
         for(int i = 0; i <=11; i++){
             ingredients.add(null);
         }
+        Button btnNext = (Button) findViewById(R.id.nextButton);
+
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), Budget.class);
+                Bundle args = new Bundle();
+                args.putSerializable("ARRAYLIST",(Serializable) ingredients);
+                myIntent.putExtra("BUNDLE",args);
+                startActivity(myIntent);
+            }
+
+        });
     }
 
     public void onCheckboxClicked(View view) {
@@ -98,13 +114,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case R.id.checkBoxFlour:
-                if (checked) {
-                    ingredients.set(10, "Flour");
-                }else {
-                    ingredients.set(10, null);
-                }
-                break;
-            case R.id.checkBoxOther:
                 if (checked) {
                     ingredients.set(10, "Flour");
                 }else {
